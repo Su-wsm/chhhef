@@ -4,7 +4,7 @@ export default {
   data() {
     return {
       count1: 0,
-      count2: 99, //别一直戳会变成负数的qwq
+      count2: 10, //别一直戳会变成负数的qwq
       count3: 66
     }
   },
@@ -12,6 +12,10 @@ export default {
   // functions that mutate state and trigger updates
   methods: {
     increment() {
+      if(this.count2 === 0){
+        alert("今日余额不足，请充值");
+        return
+      }
       this.count1++; this.count2--
     },
     decrease() {
